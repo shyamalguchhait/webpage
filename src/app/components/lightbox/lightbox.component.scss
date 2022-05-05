@@ -32,7 +32,11 @@
 
                     &:hover {
                         cursor: pointer;
-                        animation: zoomIn 1s ease;
+                        //animation: zoomIn 1s ease;
+                        //animation: swing 1s; //, flip 1s, bounce 1s; //, zoomIn 1s ease;
+                        //-webkit-animation: flip 1s; //, zoomIn 1s ease;
+                        //-webkit-animation: zoomIn 1s ease;
+                        transform: scale(1.5);
                     }
                 }
 

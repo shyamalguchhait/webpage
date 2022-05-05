@@ -18,6 +18,47 @@ export class LightboxComponent implements OnInit {
     const dir = '../../../assets/lightbox';
     //const files = fs.readdirSync(dir);
     //console.log(files[0]);
+    $(document).ready(function () {
+      $('.gallery-img').each(function (index) {
+        const value = '.gallery-img' + ':nth-child(' + index + ')';
+        const anim = [
+          'bounce',
+          'flash',
+          'pulse',
+          'rubberBand',
+          'shakeX',
+          'shakeY',
+          'headShake',
+          'swing',
+          'tada',
+          'wobble',
+          'jello',
+          'heartBeat',
+          'flip',
+          'flipInX',
+          'flipInY',
+          'hinge',
+          'jackInTheBox',
+          'rollIn',
+          'zoomIn',
+          'zoomInDown',
+          'zoomInLeft',
+          'zoomInRight',
+          'zoomInUp',
+        ];
+        console.log(value);
+        $(value)
+          .mouseenter(function () {
+            $(this).css('animation', anim[index] + ' 1s');
+          })
+          .mouseleave(function () {
+            $(this).css('animation', '');
+          });
+        $(this).hover(function () {
+          $(this).attr('title', 'Click to view the image');
+        });
+      });
+    });
   }
 
   constructor(private _lightbox: Lightbox) {
