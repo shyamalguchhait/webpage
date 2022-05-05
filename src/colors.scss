@@ -1,0 +1,27 @@
+:root {
+    background: var(--lightBg);
+    --lightColor: #111;
+    --lightBg: #eee;
+    --lightButton: rgb(4, 10, 44);
+    --lightNavColor: #000c1d;
+    --lightNavBg: #ddd;
+    --lightNavHover: purple;
+    --lightIcon: black;
+    --lightPhEmail: #00e;
+    --lightLink: #f00;
+    --lightDarkMode: rgb(0, 182, 228);
+}
+
+:root[data-theme="dark"] {
+    background: var(--lightBg);
+    --lightColor: #eee;
+    --lightBg: #111;
+    --lightButton: #fff;
+    --lightNavColor: aquamarine;
+    --lightNavBg: #222;
+    --lightNavHover: purple;
+    --lightIcon: white;
+    --lightPhEmail: #ee0;
+    --lightLink: #f0f;
+    --lightDarkMode: #ffbd07;
+}

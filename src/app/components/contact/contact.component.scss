@@ -1,0 +1,55 @@
+@import "../../../fonts.scss";
+@import "../../../colors.scss";
+.contact {
+    .googleMap {
+        width: 80%;
+        margin: auto;
+        padding: auto;
+        padding-bottom: 30px;
+        iframe {
+            border: 1px solid black;
+        }
+    }
+    .info {
+        width: 80%;
+        color: var(--lightColor);
+        margin: auto;
+    }
+    .phone {
+        width: 80%;
+        color: var(--lightColor);
+        margin: auto;
+        a {
+            color: var(--lightPhEmail);
+            text-decoration: none;
+            &:hover {
+                font-weight: bold;
+                font-style: italic;
+                text-decoration: underline;
+            }
+        }
+    }
+    .email {
+        width: 80%;
+        color: var(--lightColor);
+        margin: auto;
+        a {
+            color: var(--lightPhEmail);
+            text-decoration: none;
+            &:hover {
+                font-weight: bold;
+                font-style: italic;
+                text-decoration: underline;
+            }
+        }
+    }
+    .icon-white {
+        color: var(--lightIcon);
+        font-size: 24px;
+        &:hover {
+            color: var(--lightPhEmail);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

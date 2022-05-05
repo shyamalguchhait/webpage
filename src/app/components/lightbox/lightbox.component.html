@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="lightbox">
+    <div class="gallery-lightbox-container">
+      <div class="galler">
+        <div *ngFor="let image of _albums; let i = index" class="gallery-img">
+          <img [src]="image.src" (click)="open(i)" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

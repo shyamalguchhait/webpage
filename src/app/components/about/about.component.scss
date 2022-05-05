@@ -1,0 +1,123 @@
+.about {
+    $margin: 50px;
+
+    .bg-img {
+        background: url(../../../assets/images/aboutBg.jpg);
+        background-color: #ccc;
+        height: 50vh;
+        min-height: 500px;
+        max-height: 1000px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .pf-img {
+            width: 100%;
+            margin: auto;
+
+            img {
+                //width: 25%;
+                min-width: 250px;
+                height: 50vh;
+                text-align: center;
+                border-radius: 50%;
+                margin: auto;
+                padding: auto;
+                border: 3px solid black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .info {
+            .photo {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .name {
+                    color: var(--lightColor);
+                }
+            }
+        }
+    }
+
+    .infoFull {
+        color: var(--lightColor);
+
+        .name {
+            font-size: 25px;
+
+            .base {
+                text-align: right;
+            }
+
+            .value {
+                text-align: left;
+            }
+        }
+
+        .edu {
+            margin-top: $margin;
+
+            hr {
+                border-top: 1px solid var(--lightColor);
+            }
+
+            .school {
+                padding-left: 50px;
+
+                .schoolName {
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+                .time {
+                    font-style: italic;
+                }
+
+                .department {
+                    font-weight: bold;
+                }
+                animation: zoomInDown;
+                animation-duration: 5s;
+            }
+        }
+
+        .personal {
+            margin-top: $margin;
+
+            .personalInfo {
+                padding-left: 50px;
+
+                .base {
+                    font-weight: bold;
+                }
+
+                .value {
+                    a {
+                        text-decoration: none;
+                        color: var(--lightLink);
+
+                        &:hover {
+                            font-weight: bold;
+                            font-style: italic;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .div {
+        width: 200px;
+        height: 200px;
+        color: red;
+    }
+}
