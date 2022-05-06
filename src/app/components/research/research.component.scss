@@ -44,9 +44,17 @@ $br: 5px;
                 .list-group-item {
                     color: var(--lightColor);
                     background-color: var(--lightBg);
+
                     border: 1px solid var(--lightColor);
                     border-radius: $br;
                     border-collapse: collapse;
+                    span {
+                        background: -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        text-fill-color: text;
+                        -webkit-text-fill-color: transparent;
+                    }
                 }
             }
         }
