@@ -1,8 +1,13 @@
 <div class="container">
   <div class="about">
-    <div class="bg-img">
+    <div class="bg-img" [lazyLoad]="backgroundImage">
       <div class="pf-img">
-        <img src="../../../assets/images/pf50.png" alt="Shyamal" />
+        <img
+          [defaultImage]="defaultImage"
+          [lazyLoad]="pfImage"
+          [useSrcset]="true"
+          alt="Shyamal"
+        />
       </div>
       <div class="info">
         <div class="photo">

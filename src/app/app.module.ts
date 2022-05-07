@@ -8,6 +8,7 @@ import { ResearchComponent } from './components/research/research.component';
 import { LightboxComponent } from './components/lightbox/lightbox.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,12 @@ import { LightboxModule } from 'ngx-lightbox';
     LightboxComponent,
     ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, LightboxModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LightboxModule,
+    LazyLoadImageModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

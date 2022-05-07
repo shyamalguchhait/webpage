@@ -34,6 +34,7 @@
     "js-cookie": "^3.0.1",
     "list-files-in-dir": "^0.1.5",
     "nextjs": "^0.0.3",
+    "ng-lazyload-image": "^9.1.2",
     "ngx-lightbox": "^2.5.2",
     "path": "^0.12.7",
     "require": "^0.4.4",

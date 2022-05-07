@@ -18,4 +18,7 @@ export class AboutComponent implements OnInit {
       });
     });
   }
+  public pfImage = '../../../assets/images/pf50.png';
+  public defaultImage = '../../../assets/icons/Winter.gif';
+  public backgroundImage = '../../../assets/images/aboutBg.jpg';
 }
