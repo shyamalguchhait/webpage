@@ -2,12 +2,15 @@
 @import "../../../colors.scss";
 $padding: 50px;
 $br: 5px;
+
 .research {
     .resea {
         color: var(--lightColor);
         padding-top: $padding;
+
         .value {
             padding-left: $padding;
+
             .list-group {
                 .list-group-item {
                     color: var(--lightColor);
@@ -19,11 +22,14 @@ $br: 5px;
             }
         }
     }
+
     .tech {
         color: var(--lightColor);
         padding-top: $padding;
+
         .value {
             padding-left: $padding;
+
             .row {
                 .col {
                     &:first-child {
@@ -33,6 +39,7 @@ $br: 5px;
             }
         }
     }
+
     .extra {
         color: var(--lightColor);
         padding-top: $padding;
@@ -48,8 +55,9 @@ $br: 5px;
                     border: 1px solid var(--lightColor);
                     border-radius: $br;
                     border-collapse: collapse;
+
                     span {
-                        background: -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+                        background: -webkit-linear-gradient(0deg, green, red, blue); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
                         background-clip: text;
                         -webkit-background-clip: text;
                         text-fill-color: text;
@@ -59,11 +67,14 @@ $br: 5px;
             }
         }
     }
+
     .teach {
         color: var(--lightColor);
         padding-top: $padding;
+
         .value {
             padding-left: $padding;
+
             .list-group {
                 .list-group-item {
                     color: var(--lightColor);

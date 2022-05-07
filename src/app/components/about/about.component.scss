@@ -1,6 +1,7 @@
 .about {
     $margin: 50px;
     $duration: 5s;
+
     .bg-img {
         background: url(../../../assets/images/aboutBg.jpg);
         background-color: #ccc;
@@ -42,6 +43,8 @@
 
                 .name {
                     color: var(--lightColor);
+
+
                 }
             }
         }
@@ -51,7 +54,8 @@
         color: var(--lightColor);
 
         .name {
-            font-size: 25px;
+            font-size: 30px;
+            font-weight: bold;
 
             .base {
                 text-align: right;
@@ -84,30 +88,37 @@
                 .department {
                     font-weight: bold;
                 }
+
                 &:nth-child(2) {
                     animation: zoomInDown;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(3) {
                     animation: heartBeat;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(4) {
                     animation: flip;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(5) {
                     animation: rotateIn;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(6) {
                     animation: jackInTheBox;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(7) {
                     animation: zoomIn;
                     animation-duration: $duration;
                 }
+
                 &:nth-child(8) {
                     animation: lightSpeedInRight;
                     animation-duration: $duration;
