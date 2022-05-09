@@ -57,10 +57,11 @@ $br: 5px;
                     border-collapse: collapse;
 
                     span {
+                        background: linear-gradient(0deg, green, red, blue); //linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
                         background: -webkit-linear-gradient(0deg, green, red, blue); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
                         background-clip: text;
                         -webkit-background-clip: text;
-                        text-fill-color: text;
+                        //text-fill-color: transparent;
                         -webkit-text-fill-color: transparent;
                     }
                 }

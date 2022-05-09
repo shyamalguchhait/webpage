@@ -9,6 +9,7 @@ import { LightboxComponent } from './components/lightbox/lightbox.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     AppRoutingModule,
     LightboxModule,
     LazyLoadImageModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
