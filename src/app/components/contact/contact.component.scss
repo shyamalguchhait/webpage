@@ -22,10 +22,10 @@
         a {
             color: var(--lightPhEmail);
             text-decoration: none;
+            @include hoverUnderline;
             &:hover {
                 font-weight: bold;
                 font-style: italic;
-                text-decoration: underline;
             }
         }
     }
@@ -36,19 +36,19 @@
         a {
             color: var(--lightPhEmail);
             text-decoration: none;
+            @include hoverUnderline;
             &:hover {
                 font-weight: bold;
                 font-style: italic;
-                text-decoration: underline;
             }
         }
     }
     .icon-white {
         color: var(--lightIcon);
         font-size: 24px;
+        @include hoverUnderline;
         &:hover {
             color: var(--lightPhEmail);
-            text-decoration: underline;
             cursor: pointer;
         }
     }

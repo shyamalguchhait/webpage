@@ -4,6 +4,40 @@ $padding: 50px;
 $br: 5px;
 
 .research {
+    @mixin colorEffect {
+        border: 1px solid var(--lightColor);
+        border-radius: $br;
+        border-collapse: collapse;
+        background: -webkit-linear-gradient(
+            0deg,
+            green,
+            red,
+            blue
+        ); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+        background-clip: text;
+        -webkit-background-clip: text;
+        //text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+
+        .letter {
+            background: linear-gradient(
+                0deg,
+                green,
+                red,
+                blue
+            ); //linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+            background: -webkit-linear-gradient(
+                0deg,
+                green,
+                red,
+                blue
+            ); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+            background-clip: text;
+            -webkit-background-clip: text;
+            //text-fill-color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+    }
     .resea {
         color: var(--lightColor);
         padding-top: $padding;
@@ -15,9 +49,7 @@ $br: 5px;
                 .list-group-item {
                     color: var(--lightColor);
                     background-color: var(--lightBg);
-                    border: 1px solid var(--lightColor);
-                    border-radius: $br;
-                    border-collapse: collapse;
+                    @include colorEffect;
                 }
             }
         }
@@ -35,6 +67,10 @@ $br: 5px;
                     &:first-child {
                         font-weight: bold;
                     }
+                    &:last-child {
+                        @include colorEffect();
+                        border: 0;
+                    }
                 }
             }
         }
@@ -51,39 +87,7 @@ $br: 5px;
                 .list-group-item {
                     color: var(--lightColor);
                     background-color: var(--lightBg);
-
-                    border: 1px solid var(--lightColor);
-                    border-radius: $br;
-                    border-collapse: collapse;
-                    background: -webkit-linear-gradient(
-                        0deg,
-                        green,
-                        red,
-                        blue
-                    ); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    //text-fill-color: transparent;
-                    -webkit-text-fill-color: transparent;
-
-                    .letter {
-                        background: linear-gradient(
-                            0deg,
-                            green,
-                            red,
-                            blue
-                        ); //linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
-                        background: -webkit-linear-gradient(
-                            0deg,
-                            green,
-                            red,
-                            blue
-                        ); // -webkit-linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        //text-fill-color: transparent;
-                        -webkit-text-fill-color: transparent;
-                    }
+                    @include colorEffect();
                 }
             }
         }
@@ -100,9 +104,7 @@ $br: 5px;
                 .list-group-item {
                     color: var(--lightColor);
                     background-color: var(--lightBg);
-                    border: 1px solid var(--lightColor);
-                    border-radius: $br;
-                    border-collapse: collapse;
+                    @include colorEffect();
                 }
             }
         }

@@ -10,6 +10,8 @@
     --lightPhEmail: #00e;
     --lightLink: #f00;
     --lightDarkMode: rgb(0, 182, 228);
+    --lightFooter: rgb(161, 255, 177);
+    --lightFooterBg: red;
 }
 
 :root[data-theme="dark"] {
@@ -24,4 +26,14 @@
     --lightPhEmail: #ee0;
     --lightLink: #f0f;
     --lightDarkMode: #ffbd07; //#f0ad4e; #ffa500;
+    --lightFooter: rgb(161, 255, 177);
+    --lightFooterBg: red;
+}
+
+@mixin hoverUnderline {
+    background: linear-gradient(currentColor 0 0) bottom/var(--d, 0) 3px no-repeat;
+    transition: 1s;
+    &:hover {
+        --d: 100%;
+    }
 }

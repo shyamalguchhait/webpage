@@ -22,12 +22,22 @@ export class ResearchComponent implements AfterViewInit, OnInit {
       //const textWrapper = document.querySelector('#check');
       //console.log(textWrapper);
       //textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g,"<span class='letter'>$&</span>");
-      const textWrapper = $('#check');
-      const text: string = textWrapper.text();
 
-      const textS = text.replace(/\S/g, "<span class='letter'>$&</span>");
-      textWrapper.html(textS);
+      const textWrapper1 = $(
+        '#1st, #2nd, #3rd, #4th, #5th, #6th, #check, #8th, #9th, #10th'
+      );
+      var text = new Array();
 
+      textWrapper1.each(function (index) {
+        const text1: string = $(this).text();
+        console.log(text1);
+        text.push(text1);
+        const textS1 = text[index].replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
+        $(this).html(textS1);
+      });
       anime
         .timeline({ loop: true })
         .add({
