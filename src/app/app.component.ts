@@ -47,6 +47,28 @@ export class AppComponent {
         $('#switch').prop('checked', 'true');
       }
     });
+
+    $(document).ready(function () {
+      $('.remove').each(function () {
+        $(this).click(function () {
+          $('.index').hide(1000);
+        });
+      });
+      $('.active, .navbar-brand').click(function () {
+        $('.index').show(1000);
+      });
+    });
+  }
+
+  constructor() {
+    $(document).ready(function () {
+      let path = window.location.pathname;
+      if (path == '/') {
+        $('.index').show(1000);
+      } else {
+        $('.index').hide(1000);
+      }
+    });
   }
 }
 function setCookie(cname: string, cvalue: string, exdate: number) {

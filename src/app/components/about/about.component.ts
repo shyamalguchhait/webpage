@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import * as anime from 'animejs';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -11,7 +10,7 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     $(document).ready(function () {
       $('#btnInfoName').click(function () {
-        $('#name').toggle();
+        $('#name').toggle(1000);
         $('#btnInfoName').val(
           $('#btnInfoName').val() == 'show me' ? 'hide me' : 'show me'
         );
