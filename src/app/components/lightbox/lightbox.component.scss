@@ -1,6 +1,9 @@
+@import "../../../colors.scss";
+@import "../../../fonts.scss";
 .lightbox {
     $columnCount: 5;
     $columnWidth: 4in;
+    font-family: lato;
     z-index: 9;
 
     .gallery-lightbox-container {

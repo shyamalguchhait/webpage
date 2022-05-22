@@ -3,7 +3,7 @@
 .about {
     $margin: 50px;
     $duration: 5s;
-
+    font-family: lato;
     .bg-img {
         background: url(../../../assets/images/aboutBg.jpg);
         background-color: #ccc;
@@ -137,6 +137,7 @@
                 }
 
                 .value {
+                    font-weight: normal;
                     a {
                         text-decoration: none;
                         color: var(--lightLink);

@@ -45,7 +45,7 @@ export class ResearchComponent implements AfterViewInit, OnInit {
           opacity: [0, 1],
           scale: [4, 1],
           easing: 'easeInOutQuad',
-          duration: 2250,
+          duration: 100, //2250,
           delay: (el: number, i: number) => 150 * (i + 1),
         })
         .add({
