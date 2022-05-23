@@ -44,9 +44,9 @@ export class ResearchComponent implements AfterViewInit, OnInit {
           targets: '.letter',
           opacity: [0, 1],
           scale: [4, 1],
-          easing: 'easeInOutQuad',
-          duration: 100, //2250,
-          delay: (el: number, i: number) => 150 * (i + 1),
+          easing: 'linear', //'easeInOutQuad',
+          duration: 1000, //2250,
+          delay: (el: number, i: number) => 50 * (i + 1), //150
         })
         .add({
           targets: '.letter',

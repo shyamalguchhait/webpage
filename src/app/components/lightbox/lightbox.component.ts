@@ -1,7 +1,8 @@
 import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
-//import * as fs from 'fs';
-
+import { listFiles } from 'list-files-in-dir';
+import * as fs from 'fs';
+import { open } from 'fs';
 interface album {
   src: string;
   caption: string;
@@ -46,7 +47,7 @@ export class LightboxComponent implements OnInit {
           'zoomInRight',
           'zoomInUp',
         ];
-        console.log(value);
+        //console.log(value);
         $(value)
           .mouseenter(function () {
             $(this).css('animation', anim[index] + ' 1s');
@@ -75,6 +76,10 @@ export class LightboxComponent implements OnInit {
 
       this._albums.push(album);
     }
+
+    listFiles('../../../assets/lightbox/').then((files) => {
+      console.log(files);
+    });
   }
   open(index: number): void {
     this._lightbox.open(this._albums, index);
