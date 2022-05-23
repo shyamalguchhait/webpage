@@ -76,10 +76,6 @@ export class LightboxComponent implements OnInit {
 
       this._albums.push(album);
     }
-
-    listFiles('../../../assets/lightbox/').then((files) => {
-      console.log(files);
-    });
   }
   open(index: number): void {
     this._lightbox.open(this._albums, index);
