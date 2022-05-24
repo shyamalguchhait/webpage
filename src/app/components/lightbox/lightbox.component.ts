@@ -2,6 +2,8 @@ import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import { listFiles } from 'list-files-in-dir';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { delay } from 'rxjs';
 interface album {
   src: string;
   caption: string;
@@ -14,6 +16,8 @@ interface album {
 })
 export class LightboxComponent implements OnInit {
   _albums: album[] = [];
+  private apiURL = 'http://www.mocky.io/v2/5ea172973100002d001eeada';
+  public response: any;
   ngOnInit(): void {
     const dir = '../../../assets/lightbox';
     //const files = fs.readdirSync(dir);
@@ -59,14 +63,17 @@ export class LightboxComponent implements OnInit {
         });
       });
     });
+    this.http.get(this.apiURL).subscribe((Response) => {
+      console.log(Response);
+    });
   }
 
-  constructor(private _lightbox: Lightbox) {
+  constructor(private _lightbox: Lightbox, private http: HttpClient) {
     //const albums: album[] = [];
     for (let i = 0; i <= 19; i++) {
       const src = '../../../assets/lightbox/' + i + '.jpg';
       const caption = 'Image ' + i + ' caption here';
-      const thumb = '../../../assets/lightbox/iiser_' + i + '-thumb.jpg';
+      const thumb = '../../../assets/lightbox/' + i + '.jpg';
       const album = {
         src: src,
         caption: caption,
@@ -76,10 +83,18 @@ export class LightboxComponent implements OnInit {
       this._albums.push(album);
     }
   }
+
   open(index: number): void {
     this._lightbox.open(this._albums, index);
   }
   close(): void {
     this._lightbox.close();
+  }
+  async fetchData() {
+    this.response = '';
+    this.response = await this.http
+      .get<any>(this.apiURL)
+      .pipe(delay(1000))
+      .toPromise();
   }
 }
