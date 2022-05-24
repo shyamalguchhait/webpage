@@ -1,8 +1,7 @@
 import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import { listFiles } from 'list-files-in-dir';
-import * as fs from 'fs';
-import { open } from 'fs';
+import { HttpClient } from '@angular/common/http';
 interface album {
   src: string;
   caption: string;
