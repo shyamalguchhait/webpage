@@ -1,8 +1,8 @@
 @import "../../../colors.scss";
 @import "../../../fonts.scss";
 .lightbox {
-    $columnCount: 5;
-    $columnWidth: 4in;
+    $columnCount: 6;
+    $columnWidth: 2in;
     font-family: lato;
     z-index: 9;
 
@@ -10,8 +10,18 @@
         position: relative;
         display: inline-block;
         padding: 25px;
+        .row {
+            .col {
+                .text {
+                    color: var(--lightColor);
+                    font-size: xx-large;
+                }
+            }
+        }
 
         .galler {
+            border: 0px solid var(--lightColor);
+            margin: 10px;
             line-height: 0;
             column-count: $columnCount;
             -webkit-column-count: $columnCount;

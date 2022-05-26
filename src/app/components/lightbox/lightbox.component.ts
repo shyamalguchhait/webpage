@@ -1,9 +1,15 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import {
+  Component,
+  Injectable,
+  Input,
+  NgModule,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
-import { listFiles } from 'list-files-in-dir';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { delay } from 'rxjs';
+import { delay, Observable } from 'rxjs';
+
 interface album {
   src: string;
   caption: string;
@@ -14,16 +20,25 @@ interface album {
   templateUrl: './lightbox.component.html',
   styleUrls: ['./lightbox.component.scss'],
 })
-export class LightboxComponent implements OnInit {
+@Injectable()
+export class LightboxComponent implements OnInit, AfterViewInit {
   _albums: album[] = [];
-  private apiURL = 'http://www.mocky.io/v2/5ea172973100002d001eeada';
+  albums: album[][] = new Array([], [], [], [], [], []);
+  //private apiURL = 'http://www.mocky.io/v2/5ea172973100002d001eeada';
   public response: any;
+  ngAfterViewInit(): void {
+    $(document).ready(function () {
+      var list = document.getElementsByClassName('gallery-img');
+      console.log(list);
+    });
+  }
   ngOnInit(): void {
     const dir = '../../../assets/lightbox';
     //const files = fs.readdirSync(dir);
     //console.log(files[0]);
     $(document).ready(function () {
       $('.gallery-img').each(function (index) {
+        //console.log(index);
         const value = '.gallery-img' + ':nth-child(' + index + ')';
         const anim = [
           'bounce',
@@ -63,15 +78,16 @@ export class LightboxComponent implements OnInit {
         });
       });
     });
-    this.http.get(this.apiURL).subscribe((Response) => {
-      console.log(Response);
-    });
+    // this.http.get(this.apiURL).subscribe((Response) => {
+    //   console.log(Response);
+    // });
   }
 
   constructor(private _lightbox: Lightbox, private http: HttpClient) {
     //const albums: album[] = [];
+    /*
     for (let i = 0; i <= 19; i++) {
-      const src = '../../../assets/lightbox/' + i + '.jpg';
+      const src = '../../../assets/lightbox/0/' + i + '.jpg';
       const caption = 'Image ' + i + ' caption here';
       const thumb = '../../../assets/lightbox/' + i + '.jpg';
       const album = {
@@ -82,6 +98,30 @@ export class LightboxComponent implements OnInit {
 
       this._albums.push(album);
     }
+    */
+    var folder = new Array('0', '1', '2', '3', '4', '5');
+    for (let i in folder) {
+      var path = '../../../assets/lightbox/' + folder[i] + '.json';
+      //console.log(folder[i]);
+      this.getJSON(path).subscribe((data) => {
+        //console.log(data);
+        for (let key in data) {
+          //  console.log(data[key]);
+          const src = '../../../assets/lightbox/' + folder[i] + '/' + data[key];
+          const caption = ' ';
+          const thumb =
+            '../../../assets/lightbox/' + folder[i] + '/' + data[key];
+          const album = {
+            src: src,
+            caption: caption,
+            thumb: thumb,
+          };
+          this._albums.push(album);
+          this.albums[i].push(album);
+        }
+      });
+    }
+    console.log(this.albums);
   }
 
   open(index: number): void {
@@ -90,11 +130,16 @@ export class LightboxComponent implements OnInit {
   close(): void {
     this._lightbox.close();
   }
+  /*
   async fetchData() {
     this.response = '';
     this.response = await this.http
       .get<any>(this.apiURL)
       .pipe(delay(1000))
       .toPromise();
+  }
+  */
+  public getJSON(path: any): Observable<any> {
+    return this.http.get(path);
   }
 }
