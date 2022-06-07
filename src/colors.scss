@@ -2,15 +2,15 @@
     background: var(--lightBg);
     --lightColor: #111;
     --lightBg: #eee;
-    --lightButton: rgb(4, 10, 44);
-    --lightNavColor: #000c1d;
+    --lightButton: #040a2c;
+    --lightNavColor: #80002b;
     --lightNavBg: #ddd;
     --lightNavHover: purple;
     --lightIcon: black;
     --lightPhEmail: #00e;
     --lightLink: #f00;
-    --lightDarkMode: rgb(0, 182, 228);
-    --lightFooter: rgb(161, 255, 177);
+    --lightDarkMode: #00b6e4;
+    --lightFooter: #a1ffb1;
     --lightFooterBg: red;
 }
 
@@ -19,20 +19,21 @@
     --lightColor: #eee;
     --lightBg: #111;
     --lightButton: #fff;
-    --lightNavColor: aquamarine;
+    --lightNavColor: #7fffd4;
     --lightNavBg: #222;
     --lightNavHover: purple;
     --lightIcon: white;
     --lightPhEmail: #ee0;
     --lightLink: #f0f;
     --lightDarkMode: #ffbd07; //#f0ad4e; #ffa500;
-    --lightFooter: rgb(161, 255, 177);
+    --lightFooter: #a1ffb1;
     --lightFooterBg: red;
 }
 
 @mixin hoverUnderline {
     background: linear-gradient(currentColor 0 0) bottom/var(--d, 0) 3px no-repeat;
     transition: 1s;
+
     &:hover {
         --d: 100%;
     }
