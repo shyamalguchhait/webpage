@@ -15,9 +15,20 @@
                 position: relative;
                 width: 100px;
                 color: var(--clr); //var(--lightNavColor);
-                background: linear-gradient(currentColor 0 0) bottom/var(--d, 0) 2px no-repeat;
+                // background: linear-gradient(currentColor 0 0) bottom/var(--d, 0) 2px no-repeat;
                 text-align: center;
-                transition: 1s;
+                // transition: 0.5s;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: currentColor;
+                    visibility: hidden;
+                    transition: all 0.5s linear;
+                }
                 &:hover {
                     //background-color: var(--lightNavHover);
                     letter-spacing: 0.1em;
@@ -25,7 +36,11 @@
                     border-style: solid;
                     border-width: 2px 2px 0px 2px;
                     cursor: pointer;
-                    --d: 100%;
+                    // --d: 100%;
+                    &::before {
+                        visibility: visible;
+                        width: 100%;
+                    }
                 }
                 span {
                     display: block;
